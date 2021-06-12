@@ -40,9 +40,7 @@ function showDate(timestamp) {
 }
 
 function formatDay(timestamp) {
-  console.log(timestamp);
   let date = new Date(timestamp * 1000);
-  console.log(date);
   let dayIndex = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[dayIndex];
@@ -61,7 +59,6 @@ function showForecastData(coordinates) {
   let units = selectUnit();
   let apiKey = "95aa18dfa2d4f8bc875941518d00ae49";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=${units}`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
