@@ -46,7 +46,7 @@ function formatDay(timestamp) {
   return days[dayIndex];
 }
 
-//-----------------------------------------------  Unit conversion for Current Temperature ------------------------------------------//
+//-----------------------------------------------  Metric unit set  ------------------------------------------//
 
 function selectUnit() {
   let units = "metric";
@@ -134,10 +134,6 @@ function displayForecast(forecastResponse) {
   let forecastHTML = "";
 
   forecastTempMax1 = forecastData[1].temp.max;
-  /*
-  forecastTempMax2 = forecastData[2].temp.max;
-  forecastTempMax3 = forecastData[3].temp.max;
-  */
   forecastTempMax4 = forecastData[4].temp.max;
 
   let forecastFirst = `
@@ -202,5 +198,5 @@ searchBtn.addEventListener("submit", getSearchCity);
 let currentBtn = document.querySelector("#current-btn");
 currentBtn.addEventListener("click", getCurrentPosition);
 
-handleSearchCity("Stockholm");
+handleSearchCity("Buenos Aires");
 let celsiusTemperature = null;
