@@ -54,7 +54,7 @@ li {
 .icon {
   margin: 150px 0 0 40px;
 }
-/*---------------- Temp & unit styling --------------*/
+/*---------------- Temp & unit styling + Background--------------*/
 .current-temp {
   font-size: 80px;
   font-weight: 600;
@@ -64,36 +64,6 @@ li {
   left: 0px;
   top: 130px;
   color: white;
-}
-
-.weather .inactive {
-  font-size: 25px;
-  font-weight: 400;
-  color: #373d46;
-  position: relative;
-  top: 0;
-  left: 0;
-  text-decoration: none;
-}
-
-.inactive:hover {
-  text-decoration: none;
-  color: rgb(247, 92, 2);
-  cursor: pointer;
-}
-
-.weather .active {
-  font-size: 25px;
-  font-weight: 400;
-  color: white;
-  position: relative;
-  top: 0;
-  left: 0;
-  text-decoration: none;
-}
-
-.active:hover {
-  text-decoration: none;
 }
 
 .weather .unit {
@@ -106,14 +76,13 @@ li {
   text-decoration: none;
 }
 
-/*------------------ Background -------------------*/
 .weather {
   border-radius: 30px;
   background: rgb(
     247,
     92,
     2,
-    0.8
+    0.9
   ); /* back-up if image doesn't work in browser*/
   background-image: linear-gradient(
       45deg,
@@ -126,6 +95,13 @@ li {
   position: relative;
   z-index: 1;
   right: -25px;
+
+  font-size: 25px;
+  font-weight: 400;
+  color: white;
+  position: relative;
+  left: 23px;
+  text-decoration: none;
 }
 
 .weather:hover {
