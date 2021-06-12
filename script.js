@@ -55,27 +55,6 @@ function selectUnit() {
   return units;
 }
 
-function changeUnit(e) {
-  e.preventDefault();
-  if (e.target.id === "farenheit") {
-    let fTemp = (celsiusTemperature * 9) / 5 + 32;
-    let temperatureElement = document.querySelector("#currentTemp");
-    temperatureElement.innerHTML = Math.round(fTemp);
-    //DOM JS: classlist - "Remove the active-class the celsius degrees is using as a default, and add it to the Farenheit unit instead"
-    celsiusLink.classList.remove("active");
-    celsiusLink.classList.add("inactive");
-    farenheitLink.classList.remove("inactive");
-    farenheitLink.classList.add("active");
-  } else if (e.target.id === "celsius") {
-    let temperatureElement = document.querySelector("#currentTemp");
-    temperatureElement.innerHTML = Math.round(celsiusTemperature);
-    celsiusLink.classList.remove("inactive");
-    celsiusLink.classList.add("active");
-    farenheitLink.classList.add("inactive");
-    farenheitLink.classList.remove("active");
-  }
-}
-
 //-----------------------------------------------  Weather for Search Result ------------------------------------------//
 //Get the weather data (for the city or the current lat/long coordinates provided by the API in the previous step)
 function showForecastData(coordinates) {
@@ -157,12 +136,12 @@ function displayForecast(forecastResponse) {
 
   let forecastHTML = "";
 
-  /*
   forecastTempMax1 = forecastData[1].temp.max;
+  /*
   forecastTempMax2 = forecastData[2].temp.max;
   forecastTempMax3 = forecastData[3].temp.max;
+  */
   forecastTempMax4 = forecastData[4].temp.max;
-*/
 
   let forecastFirst = `
   <div class="day-first box-a">
@@ -209,7 +188,7 @@ function displayForecast(forecastResponse) {
                }@2x.png" alt="next day weather icon" class="icons"> 
                <li>${formatDay(forecastData[4].dt)}</li>
                <li > <span class="max-temp" id="forecast-max-temp">${Math.round(
-                 forecastData[4].temp.max
+                 forecastTempMax4
                )}</span>° <span class="min-temp" ><span>${Math.round(
     forecastData[4].temp.min
   )}</span>°</span></li>
@@ -226,15 +205,5 @@ searchBtn.addEventListener("submit", getSearchCity);
 let currentBtn = document.querySelector("#current-btn");
 currentBtn.addEventListener("click", getCurrentPosition);
 
-let farenheitLink = document.querySelector("#farenheit");
-farenheitLink.addEventListener("click", (e) => changeUnit(e));
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", (e) => changeUnit(e));
-
 handleSearchCity("Stockholm");
 let celsiusTemperature = null;
-let forecastTempMax1 = null;
-let forecastTempMax2 = null;
-let forecastTempMax3 = null;
-let forecastTempMax4 = null;
