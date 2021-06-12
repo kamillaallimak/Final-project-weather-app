@@ -1,0 +1,309 @@
+/* container */
+li {
+  list-style: none;
+}
+
+.ul {
+  padding: 10px;
+  margin: 10px;
+}
+
+.container {
+  margin: 50px;
+}
+
+.time,
+.github {
+  font-size: 10px;
+  font-weight: 400;
+  color: #373d46;
+  position: relative;
+  text-align: center;
+  top: 15px;
+}
+
+/* ------------------------------------------------------------- LEFT WEATHER BOX ----------------------------------------------------------*/
+.location {
+  font-size: 35px;
+  font-weight: 600;
+  position: relative;
+  color: white;
+  padding: 30px 0 0 30px;
+}
+
+.date {
+  font-size: 20px;
+  font-weight: 300;
+  color: white;
+  position: relative;
+  left: 50px;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: 300;
+  color: white;
+  position: relative;
+  left: 50px;
+}
+
+.description::first-letter {
+  text-transform: capitalize;
+}
+
+.icon {
+  margin: 150px 0 0 40px;
+}
+/*---------------- Temp & unit styling --------------*/
+.current-temp {
+  font-size: 80px;
+  font-weight: 600;
+  border: transparent;
+  background: transparent;
+  position: relative;
+  left: 0px;
+  top: 130px;
+  color: white;
+}
+
+.weather .inactive {
+  font-size: 25px;
+  font-weight: 400;
+  color: #373d46;
+  position: relative;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+}
+
+.inactive:hover {
+  text-decoration: none;
+  color: rgb(247, 92, 2);
+  cursor: pointer;
+}
+
+.weather .active {
+  font-size: 25px;
+  font-weight: 400;
+  color: white;
+  position: relative;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
+.weather .unit {
+  font-size: 25px;
+  font-weight: 400;
+  color: white;
+  position: relative;
+  top: -40px;
+  left: -5px;
+  text-decoration: none;
+}
+
+/*------------------ Background -------------------*/
+.weather {
+  border-radius: 30px;
+  background: rgb(
+    247,
+    92,
+    2,
+    0.8
+  ); /* back-up if image doesn't work in browser*/
+  background-image: linear-gradient(
+      45deg,
+      rgba(255, 242, 0, 0.8),
+      rgba(247, 92, 2, 0.8)
+    ),
+    url(img/gallivaresky.jpeg);
+  background-size: cover;
+  height: 500px;
+  position: relative;
+  z-index: 1;
+  right: -25px;
+}
+
+.weather:hover {
+  transform: scale(1.02);
+  transition: all 300ms ease-in-out;
+}
+
+/* -----------------------------------------------------------  RIGHT INFO BOX ------------------------------------------------------------*/
+
+/*-------- Background ------*/
+.info {
+  border-radius: 30px;
+  background: rgba(34, 41, 49);
+  height: 450px;
+}
+
+.wrapper {
+  position: relative;
+  top: 30px;
+}
+
+/*------- Weather data -----------*/
+.humidity-wind {
+  font-size: 18px;
+  color: white;
+  position: relative;
+  left: 90px;
+}
+
+.humidity {
+  font-size: 18px;
+  font-weight: 200;
+  color: white;
+  position: relative;
+  left: 80px;
+}
+
+.wind {
+  font-size: 18px;
+  color: white;
+  position: relative;
+  left: 115px;
+}
+
+/* ------weather for next coming days ------------*/
+.flexbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.day-first {
+  background: rgb(202, 199, 199);
+  border-radius: 10px;
+  color: #373d46;
+  position: relative;
+  left: 6px;
+}
+
+.day-middle {
+  background: rgb(168, 166, 166);
+  color: white;
+}
+
+.day-last {
+  background: rgb(168, 166, 166);
+  border-radius: 0 10px 10px 0;
+  color: white;
+}
+
+.box-a:hover {
+  transform: scale(1.1);
+}
+.box-b:hover {
+  transform: scale(1.1);
+  border-radius: 10px;
+  background: rgb(216, 213, 213);
+  color: #5c6068;
+}
+
+.icons {
+  width: 60px;
+}
+
+.max-temp {
+  font-weight: 800;
+}
+
+.min-temp {
+  font-weight: 400;
+  color: #4b4d50;
+}
+
+/* ------ Search new location  ------*/
+.search-block {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.search-btn {
+  padding: 10px 15px;
+  border-radius: 50px;
+  background: rgb(233, 91, 9);
+  border: transparent;
+  color: white;
+  position: relative;
+  margin-top: 20px;
+}
+
+.search-btn:hover {
+  background: rgb(255, 208, 0);
+  color: rgba(34, 41, 49);
+  transition: all 300ms ease-in-out;
+}
+
+.search-input {
+  padding: 2px 0 2px 10px;
+  border-radius: 20px;
+  width: 60%;
+  position: relative;
+  left: 20px;
+  margin-top: 20px;
+  background-color: rgb(245, 244, 244);
+  color: #373d46;
+}
+
+/*----- Current location button -----------*/
+
+#current-btn {
+  padding: 5px 20px;
+  border-radius: 20px;
+  background: linear-gradient(
+    45deg,
+    rgba(247, 92, 2, 9.5),
+    rgb(255, 217, 0, 9.5)
+  );
+  color: white;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  border: transparent;
+  margin-top: 30px;
+}
+
+#current-btn:hover {
+  transform: scale(0.95);
+  transition: all 300ms ease-in-out;
+}
+
+/* -------- Responsiveness ------------*/
+@media only screen and (max-width: 1007px) {
+  /* For mobile phones: */
+  [class*="weather"] {
+    position: relative;
+    left: 0;
+  }
+
+  [class*="unit"] {
+    font-size: 20px;
+    top: -25px;
+  }
+
+  [class*="location"] {
+    font-size: 25px;
+  }
+
+  [class*="date-time"] {
+    font-size: 20px;
+    left: 60px;
+  }
+
+  [class*="description"] {
+    font-size: 20px;
+    left: 60px;
+  }
+
+  [class*="humidity-wind"] {
+    font-size: 16px;
+    left: 30px;
+  }
+}
